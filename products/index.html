@@ -1,0 +1,38 @@
+---
+layout: main
+title: Products
+products:
+  - img_path: /images/English_Pokemon_logo.png
+    link: "http://www.pokemon.com/us/pokemon-tcg/play-online/"
+  - img_path: /images/fantasy_flight_games_logo.jpg
+    link: "https://www.fantasyflightgames.com/en/index/"
+  - img_path: /images/Games-Workshop-Logo.jpg
+    link: "http://www.games-workshop.com/"
+  - img_path: /images/warlord-logo-small.jpg
+    link: "http://www.warlordgames.com/"
+  - img_path: /images/Wizards_of_the_Coast_logo.png
+    link: "https://company.wizards.com/"
+  - img_path: /images/WizKidsLogo.png
+    link: "http://wizkidsgames.com/"
+  - img_path: /images/chx_logo.png
+    link: "http://www.chessex.com/"
+  - img_path: /images/pegasus_hobbies_logo.jpg
+    link: "http://www.pegasushobbies.net/catalog/"
+  - img_path: /712wzhxn0ml.jpg
+    link: ""
+  - img_path: /images/img_2870.jpg
+    link: ""
+---
+<div class="row">
+
+	{% for product in page.products %}
+	<div class="col-xs-6 col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="{{ product.link }}"><img class="img-responsive center-block" src="{{ site.baseurl }}{{ product.img_path}}"></a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+
+</div>

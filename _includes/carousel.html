@@ -1,0 +1,41 @@
+{% if page.carousel.first.img_path.size > 1 %}
+	<div id="carousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		{% if page.carousel.size > 1 %}
+		<ol class="carousel-indicators">
+			{% for item in page.carousel %}
+				<li data-target="#carousel-example-generic" data-slide-to="{{ forloop.index }}" {% if forloop.index == 1 %}class="active"{% endif %}></li>
+			{% endfor %}
+		</ol>
+		{% endif %}
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			{% for item in page.carousel %}
+				{% if forloop.index == 1 %}
+				<div class="item active">
+				{% else %}
+				<div class="item">
+				{% endif %}
+					<div class="carousel-img" style="background: url({{ site.baseurl }}{{ item.img_path }}) no-repeat center;"></div>
+					<div class="carousel-caption">
+						<h3>{{ item.caption_title }}</h3>
+						<p>{{ item.caption }}</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+		<!-- Controls -->
+		{% if page.carousel.size > 1 %}
+			<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+				<i class="fa fa-chevron-left"></i>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+				<i class="fa fa-chevron-right"></i>
+				<span class="sr-only">Next</span>
+			</a>
+		{% endif %}
+	</div>
+{% endif %}

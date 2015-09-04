@@ -1,0 +1,11 @@
+baseurl: 
+defaults:
+ -
+  scope:
+    path: ""
+  values:
+    carousel:
+     - img_path: ""
+       caption_title: ""
+       caption: ""
+    show_title: true
